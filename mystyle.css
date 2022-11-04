@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,400;0,500;0,700;1,100;1,500;1,700;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Lato', sans-serif;
+
+    /* peso da fonte  */
+    font-weight: 700;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(49, 49, 49);
+}
+
+header{
+
+    width: 100%;
+    
+    height: 70px;
+    /* height altura */
+
+    background-color: rgb(151, 31, 31);
+
+    box-shadow: 0px 5px 50px #000;
+    /* sombra 0px é x - y é 5px - e 50px é blur(borrão) */
+
+    padding: 10px;
+
+    display: flex;
+    /* display flex deixa um do lado do outro */
+
+    /* alinhar o items no centro tanto logo como menu  */
+    align-items: center;
+
+
+    /* quebrará a linha quando um chocar com o outro nos elementos do header - aqui é valido só para os elementos contidos dentro do header, não vale para os netos do header, somente os filhos. para os netos, do header, tens que colocar novamente o flex-wrap dentro do pai dos netos, no caso aqui, dentro da classe .menu*/
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+    /* space-between deixa em extremos opostos */
+}
+
+.menu{
+    /* list style: 'none' - retira os pontinhos que vem por padrão no html */
+    list-style: none;
+
+    /* display flex colocar um do lado do outro  */
+    display: flex;
+
+    flex-wrap: wrap;
+    margin-right: 100px;
+}
+
+.menu li a{
+    color: aliceblue;
+
+    /* com display block ativado, ele deixa ser um elemento de linha e se torna um elemento de caixa */
+    display: block;
+
+    /* tira o sublinhado do elemento */
+    text-decoration: none;
+
+    padding: 10px 20px 10px 20px;
+    border-radius: 15px;
+    margin-left: 10px;
+
+    transition: transform 0.3s;
+
+}
+
+/* elemento hover quando o mouse passa por cima do elemento */
+.menu li a:hover{
+    color: aliceblue;
+    display: block;
+    text-decoration: none;
+    margin-left: 10px;
+    background-color: rgb(49, 49, 49);
+    
+    -ms-transform: scale(1.2);
+    
+    -webkit-transform: scale(1.2);
+    
+    transform: scale(1.2);
+    
+}
+
+.logo{
+    margin-left: 100px;
+    width: 100px;
+    height: 45px;
+    border-radius: 10px;
+    background-color: aliceblue;
+    
+}
+
+h1{
+    color: aliceblue;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* .container{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-wrap: wrap - serve para quebrar e o elemento ir para baixo *
+} */
+
+/* .container div{
+    flex: 1 1 300px;
+    margin: 10px;
+    /* flex grow - ajusta os flex item dentor de um container maior */
+
+    /* flex shrink - define qual o tamanho minimo se eu quero que diminuia, ou nao, depedendo da situação */
+
+    /* flex basis pra definir tipo um tamanho minimo para o elemento(flex item) ate onde ele tem que alcançar */
+
+    /* na ordem: grow - shrink - basis 
+} */
+
+
+
+img{
+    /* quando o width está 100% ele estará do mesmo tamanho da classe container  */
+    width: 100%;
+    border-radius: 20px;
+} 
+
+.container{
+
+    /* largura maxima dele seja 1200pixels  */
+    max-width: 1200px;
+
+    /* centralizando  */
+    margin: 0 auto;
+    
+    padding: 0px 20px 0px 20px;
+    display: grid;
+    grid-gap: 30px;
+
+    justify-content: center;
+
+    grid-template-areas:
+    "sidenav item item"
+    "sidenav item item"
+    "sidenav item item"
+    "footer footer footer";
+
+    
+
+}
+
+.sidenav{
+    max-width: 300px;
+    min-width: 250px;
+
+    height: 973px;
+
+    
+    border: 1px solid rgb(141, 141, 141);
+    background-color:  rgb(151, 31, 31);
+    box-shadow: 0px 0px 5px  #000;
+    border-radius:  20px;
+    grid-area: "sidenav";
+    grid-row: sidenav;
+
+    
+}
+
+.item{
+
+    max-width: 300px;
+    min-width: 250px;
+
+    height: 300px;
+    
+    box-shadow: 0px 0px 5px  #000;
+    border: 1px solid rgb(141, 141, 141);
+    background-color:  rgb(151, 31, 31);
+    border-radius:  20px;
+
+    grid-area: "item";
+
+    
+}
+
+.item p{
+    font-family:Lato;
+
+    font-weight: 700;
+    color: aliceblue;
+    text-transform: uppercase;
+}
+
+
+.footer{
+    width: auto;
+    height: 100px;
+
+    border: 1px solid rgb(141, 141, 141);
+    background-color:  rgb(151, 31, 31);
+    box-shadow: 0px 0px 5px  #000;
+    background-color:  rgb(119, 119, 119);
+    border-radius:  20px;
+
+    grid-area: "footer";
+    grid-column: footer;
+}
+
+
+@media (max-width: 820px){
+
+
+    .container{
+        
+        grid-template-areas:
+        "sidenav item"
+        "sidenav item"
+        "sidenav item"
+        "sidenav item"
+        "sidenav item"
+        "sidenav item"
+        "footer footer";
+    
+        
+    
+    }
+
+
+}
+
+@media (max-width: 520px){
+
+        .sidenav{
+            height: 900px;
+        }
+
+    .container{
+        
+        grid-template-areas:
+        "sidenav "
+        "item"
+        "item"
+        "item"
+        "item"
+        "item"
+        "item"
+        "footer";
+    
+        
+    
+    }
+
+
+}
